@@ -1,11 +1,10 @@
 Tweets::Application.routes.draw do
-  get "sessions/new"
-
-  get "sessions/create"
-
-  get "sessions/destroy"
-
+  
   resources :users
+  resources :sessions
+
+  get 'logout', to: 'sessions#destroy', as: 'logout'
+
   root to: "users#new"
   
   # The priority is based upon order of creation:
