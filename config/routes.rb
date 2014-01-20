@@ -1,5 +1,8 @@
 Tweets::Application.routes.draw do
   
+  resources :tweets
+
+
   resources :users
   resources :sessions
 
