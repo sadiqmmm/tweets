@@ -1,8 +1,7 @@
 Tweets::Application.routes.draw do
   
+  resources :relationships
   resources :tweets
-
-
   resources :users
   resources :sessions
 
