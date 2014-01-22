@@ -10,10 +10,15 @@
 
 <header>
 	<div class="wrapper">
-		<img src="/gfx/logo.png">
-		<span>Twitter Clone</span>
+		
+		<a href="/buddies">
+		 <span id ="brand_name">Twitter Clone</span>
+		</a>
 		<% if current_user  %>	 		 
+			<%= link_to "Buddies' Tweets", buddies_path %> 
 			<%= link_to "Public Tweets", tweets_path %> 
+			<%= link_to "Public Profile", users_path %> 
+			<%= link_to "My Profile", current_user %> 
  			<%= link_to "Logout", logout_path %>  
 	 	<% else  %>
 	 		<%= form_tag sessions_path do %>

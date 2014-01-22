@@ -2,7 +2,7 @@
   <%= render 'tweets/new_form' %>
  <% end %>
 <div id="ribbits" class="panel left">
-	<h1>Tweets Profile</h1>
+	<h1>Tweets Profile <%= link_to "Edit", edit_user_path %></h1> 
 	<div class="ribbitWrapper">
 		<img class="avatar" src="<%= @user.avatar_url %>" />
 		<span class="name"> <%= @user.name %> </span>

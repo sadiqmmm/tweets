@@ -1,0 +1,28 @@
+<% if current_user %>
+	<%= render "tweets/new_form" %>
+<% end %>
+<div class="panel left">
+	<h1>Public Profiles </h1>
+	
+	<% @users.each do |user| %>
+		<div class="ribbitWrapper">
+			<a href="<%= user_path user %>">
+				<img class="avatar" src="<%= user.avatar_url %>" />
+				<span class="name"><%= user.name %></span> 
+			</a>
+			@<%= user.username %>
+
+			<p>
+				<%= user.tweets.length %> Tweets
+				<span class="spacing"><%= user.followers.length %> Followers</span>
+				<span class="spacing"> <%= user.followeds.length %> Following</span>			
+			</p>
+			<% if user.bio %>
+				<p><%= user.bio %></p>
+			<% elsif user.tweets.first %>
+				<p><%= user.tweets.first.content %></p>
+			<% end %>
+		</div>
+	<% end %>
+</div>
+<%= javascript_include_tag 'tweets' %>
